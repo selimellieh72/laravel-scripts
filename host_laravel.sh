@@ -15,9 +15,8 @@ while [ $? -eq 0 ]; do
     echo "
     server {
     # Example PHP Nginx FPM config file
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    server_name $domain www.$domain
+    listen 80;
+    server_name $domain www.$domain;
     root $project/public;
 
     # Add index.php to setup Nginx, PHP & PHP-FPM config
