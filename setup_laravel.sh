@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Wellcome to the Laravel setup script!"
 
-while [ $? -ne 0 ]; do
+while [ $? -eq 0 ]; do
     echo "Updating packages..."
     apt update > /dev/null  2>/dev/null
     echo "Installing Core Dependencies..."
@@ -11,7 +11,7 @@ while [ $? -ne 0 ]; do
     LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php > /dev/null  2>/dev/null
     echo "Repository added!"
     echo "Installing PHP, Laravel and MySQL..."
-    apt install -y mysql-server php-mysql php-dom > /dev/null 2>/dev/null
+    apt install -y mysql-server php php-mysql php-dom > /dev/null 2>/dev/null
     echo "Installation complete!"
     cd /var/www/html
     read -p "Enter your github project url: " url
