@@ -24,7 +24,7 @@ while [ $? -eq 0 ]; do
 
 
     location / {
-        try_files \$uri \$uri/ =404;
+        try_files $uri $uri/ /index.php?$query_string;
     }
 
     # pass PHP scripts on Nginx to FastCGI (PHP-FPM) server
@@ -46,7 +46,7 @@ while [ $? -eq 0 ]; do
     " > /etc/nginx/sites-available/$domain
     echo "Nginx config file generated!"
     echo "Enabling Nginx config file..."
-    ln -s /etc/nginx/sites-available/$domain /etc/nginx/sites-enabled/
+    ln -s /etc/nginx/sites-available/$domain /etc/nginx/sites-enabled/ > /dev/null 2>/dev/null
     echo "Nginx config file enabled!"
     echo "Testing Nginx config file..."
     nginx -t
