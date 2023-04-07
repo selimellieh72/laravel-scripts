@@ -1,5 +1,8 @@
 #!/bin/bash
+echo "Wellcome to the Laravel setup script!"
 
+echo "Updating packages..."
+apt update > /dev/null
 echo "Installing git, curl, php, mysql, composer, and laravel..."
 apt install -y software-properties-common ca-certificates lsb-release apt-transport-https > /dev/null
 echo "Installation complete!"
