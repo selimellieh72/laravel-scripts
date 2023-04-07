@@ -9,8 +9,8 @@ while [ $? -eq 0 ]; do
     echo "Installing PHP-FPM..."
     apt -y install php-fpm > /dev/null 2>/dev/null
     echo "Installation complete!"
-    echo -p "Enter your project location: " project
-    echo -p "Enter website domain: (Empty for none) " domain
+    read -p "Enter your project location: " project
+    read -p "Enter website domain: (Empty for none) " domain
     echo "Generating Nginx config file..."
     echo "
     server {
@@ -55,6 +55,7 @@ while [ $? -eq 0 ]; do
     echo "Restarting Nginx..."
     systemctl restart nginx
     echo "Nginx restarted!"
+    break
 done
 if [ $? -eq 0 ]; then
     echo "Laravel deploy complete!"
