@@ -33,6 +33,7 @@ while [ $? -eq 0 ]; do
     echo "Generating key..."
     php artisan key:generate
     echo "Key generated!"
+    break
 done
 
 if [ $? -eq 0 ]; then
