@@ -11,10 +11,10 @@ echo "Node version: $(node -v)"
 echo "Installing PM2..."
 npm install pm2 -g > /dev/null 2>/dev/null
 echo "PM2 installed!"
-echo "Enter your project location: " project
+read -p "Enter your project location: " project
 cd "$project"
 echo "Running pm2 process..."
-pm2 start npm --name (echo $project | sed -E 's/.*\/(.*)/\1/') -- start > /dev/null 2>/dev/null
+pm2 start npm --name $(echo $project | sed -E 's/.*\/(.*)/\1/') -- start > /dev/null 2>/dev/null
 echo "pm2 process running!"
 echo "pm2 process list:"
 pm2 list
