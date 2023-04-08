@@ -20,8 +20,7 @@ echo "pm2 process list:"
 pm2 list
 read -p "Enter website domain: (Empty for none) " domain
 echo "Generating Nginx config file..."
-echo "
-server {
+echo "server {
         server_name $domain www.$domain;
 
         index index.html index.htm;
@@ -56,4 +55,8 @@ server {
 
         listen 80 default_server;
         listen [::]:80;
-}
+}" > /etc/nginx/sites-available/$domain
+echo "Nginx config file generated!"
+echo "Enabling Nginx config file..."
+ln -s /etc/nginx/sites-available/$domain /etc/nginx/sites-enabled/ > /dev/null 2>/dev/null
+echo "Nginx config file enabled!"
