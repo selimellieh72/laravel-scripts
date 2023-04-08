@@ -17,7 +17,7 @@ while [ $? -eq 0 ]; do
     read -p "Enter your github project url: " url
     git clone $url 
     echo "Project cloned!"
-    cd $(cat $url | sed -E 's/.*\/(.*)/\1/')
+    cd $(echo $url | sed -E 's/.*\/(.*)/\1/')
     echo "Installing composer..."
     wget -q -O composer-setup.php https://getcomposer.org/installer
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer > /dev/null 2>/dev/null

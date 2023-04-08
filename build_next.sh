@@ -9,7 +9,7 @@ read -p "Enter git repository URL: " repo
 echo "Cloning repository..."
 git clone $repo > /dev/null 2>/dev/null
 echo "Repository cloned!"
-cd $(cat $repo | sed -E 's/.*\/(.*)/\1/')
+cd $(echo $repo | sed -E 's/.*\/(.*)/\1/')
 echo "Installing dependencies..."
 npm install --force > /dev/null 2>/dev/null
 echo "Dependencies installed!"
