@@ -12,8 +12,8 @@ git clone $repo > /dev/null 2>/dev/null
 echo "Repository cloned!"
 cd $(echo $repo | sed -E 's/.*\/(.*)/\1/')
 echo "Installing dependencies..."
-npm install --force
+npm install -y --force > /dev/null 2>/dev/null
 echo "Dependencies installed!"
-echo "Building project..."
-npx next build
+echo "Building project..." 
+npx next build > /dev/null 2>/dev/null
 echo "Project built!"
