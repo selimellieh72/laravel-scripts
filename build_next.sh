@@ -7,12 +7,13 @@ echo "Nodejs and npm installed!"
 echo "Node version: $(node -v)"
 read -p "Enter git repository URL: " repo
 echo "Cloning repository..."
+cd /var/www/html
 git clone $repo > /dev/null 2>/dev/null
 echo "Repository cloned!"
 cd $(echo $repo | sed -E 's/.*\/(.*)/\1/')
 echo "Installing dependencies..."
-npm install --force > /dev/null 2>/dev/null
+npm install --force
 echo "Dependencies installed!"
 echo "Building project..."
-npx next build > /dev/null 2>/dev/null
+npx next build
 echo "Project built!"
