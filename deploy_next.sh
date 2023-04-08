@@ -60,3 +60,8 @@ echo "Nginx config file generated!"
 echo "Enabling Nginx config file..."
 ln -s /etc/nginx/sites-available/$domain /etc/nginx/sites-enabled/ > /dev/null 2>/dev/null
 echo "Nginx config file enabled!"
+echo "Testing Nginx config file..."
+nginx -t
+echo "Restarting Nginx..."
+systemctl restart nginx
+echo "Nginx restarted!"
