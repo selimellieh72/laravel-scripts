@@ -18,7 +18,7 @@ pm2 start npm --name $(echo $project | sed -E 's/.*\/(.*)/\1/') -- start > /dev/
 echo "pm2 process running!"
 echo "pm2 process list:"
 pm2 list
-read "Enter website domain: (Empty for none) " domain
+read -p "Enter website domain: (Empty for none) " domain
 echo "Generating Nginx config file..."
 echo "
 server {
