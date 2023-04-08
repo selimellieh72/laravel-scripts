@@ -14,7 +14,7 @@ echo "PM2 installed!"
 read -p "Enter your project location: " project
 cd "$project"
 echo "Running pm2 process..."
-pm2 start npm --name $(echo $project | sed -E 's/.*\/(.*)/\1/') -- start > /dev/null 2>/dev/null
+pm2 start "npm run start -- -p 8080" --name $(echo $project | sed -E 's/.*\/(.*)/\1/') > /dev/null 2>/dev/null
 echo "pm2 process running!"
 echo "pm2 process list:"
 pm2 list
