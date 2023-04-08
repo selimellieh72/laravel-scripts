@@ -2,7 +2,7 @@
 echo "Welome to the next build script!"
 echo "Installing nodejs, npm..."
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - > /dev/null 2>/dev/null
-apt install -y nodejs > /dev/null 2>/dev/null
+apt install -y nodejs npm > /dev/null 2>/dev/null
 echo "Nodejs and npm installed!"
 echo "Node version: $(node -v)"
 read -p "Enter git repository URL: " repo
