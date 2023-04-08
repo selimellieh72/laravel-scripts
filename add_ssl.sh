@@ -13,4 +13,6 @@ echo "Certbot enabled!"
 echo "Running certbot..."
 sudo certbot --nginx
 echo "Certbot run!"
+echo "Restarting nginx..."
+systemctl restart nginx
 echo "SSL script complete!"
