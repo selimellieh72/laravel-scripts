@@ -13,3 +13,6 @@ cd $(cat $repo | sed -E 's/.*\/(.*)/\1/')
 echo "Installing dependencies..."
 npm install --force > /dev/null 2>/dev/null
 echo "Dependencies installed!"
+echo "Building project..."
+npx next build > /dev/null 2>/dev/null
+echo "Project built!"
